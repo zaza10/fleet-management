@@ -26,66 +26,59 @@ import za.co.rambau.fleet.fleet.management.data.entities.Role;
  */
 @Stateless
 @Path("za.co.rambau.fleet.fleet.management.data.entities.role")
-public class RoleFacadeREST extends AbstractFacade<Role> {
+public class RoleFacadeREST {
 
     @PersistenceContext(unitName = "za.co.rambau.fleet_fleet-management-web_war_1.0-SNAPSHOTPU")
     private EntityManager em;
 
     public RoleFacadeREST() {
-        super(Role.class);
+       
     }
 
     @POST
-    @Override
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void create(Role entity) {
-        super.create(entity);
+//        super.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public void edit(@PathParam("id") Long id, Role entity) {
-        super.edit(entity);
+        //super.edit(entity);
     }
 
     @DELETE
     @Path("{id}")
     public void remove(@PathParam("id") Long id) {
-        super.remove(super.find(id));
+       // super.remove(super.find(id));
     }
 
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Role find(@PathParam("id") Long id) {
-        return super.find(id);
+       return null;
     }
 
     @GET
-    @Override
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<Role> findAll() {
-        return super.findAll();
+        return null;
     }
 
     @GET
     @Path("{from}/{to}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public List<Role> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
-        return super.findRange(new int[]{from, to});
+        return null;
     }
 
     @GET
     @Path("count")
     @Produces(MediaType.TEXT_PLAIN)
     public String countREST() {
-        return String.valueOf(super.count());
+        return null;
     }
-
-    @Override
-    protected EntityManager getEntityManager() {
-        return em;
-    }
-    
+   
 }
