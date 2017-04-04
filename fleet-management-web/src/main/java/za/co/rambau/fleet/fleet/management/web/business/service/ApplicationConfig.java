@@ -29,8 +29,8 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(za.co.rambau.fleet.fleet.management.web.business.service.RoleFacadeREST.class);
-        resources.add(za.co.rambau.fleet.fleet.management.web.business.service.UserFacadeREST.class);
+        resources.add(za.co.rambau.fleet.fleet.management.web.business.service.RoleService.class);
+        resources.add(za.co.rambau.fleet.fleet.management.web.business.service.UserService.class);
     }
     
 }
